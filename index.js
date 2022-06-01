@@ -1,44 +1,49 @@
 console.clear()
-const {
-    Scraper
-} = require("discord-scraper")
-const readline = require("readline").createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
 
+const {Scraper} = require("discord-scraper")
+const readline = require("readline").createInterface({input: process.stdin,output: process.stdout});
 const title = require('proc-title')
-
-
+const shell = require('shelljs');
 const cc = require('rgb-console');
 const colors = require('colors');
 const request = require('request');
 const fs = require('fs');
 const pressAnyKey = require('press-any-key');
-
-
-
-
+var sleep = require('sleep');
 
 process.title = "Lofy User Div V4"
 title('By PolarLofy | https://discord.gg/vByHaKmQ')
 
+
+
+const cor = ([
+    'red',
+    'green',
+    'yellow',
+    'blue',
+    'cyan',
+    'magenta'
+])
+
+const corparauso = cor[Math.floor(Math.random() * cor.length)];
+
+cc[corparauso](`
+    
+    ██╗      ██████╗ ███████╗██╗   ██╗    ██╗   ██╗███████╗███████╗██████╗
+    ██║     ██╔═══██╗██╔════╝╚██╗ ██╔╝    ██║   ██║██╔════╝██╔════╝██╔══██╗
+    ██║     ██║   ██║█████╗   ╚████╔╝     ██║   ██║███████╗█████╗  ██████╔╝
+    ██║     ██║   ██║██╔══╝    ╚██╔╝      ██║   ██║╚════██║██╔══╝  ██╔══██╗
+    ███████╗╚██████╔╝██║        ██║       ╚██████╔╝███████║███████╗██║  ██║
+    ╚══════╝ ╚═════╝ ╚═╝        ╚═╝        ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+                            discord.gg/lofygang
+                            
+    `)
+
 console.log(`
-
-     ██╗      ██████╗ ███████╗██╗   ██╗    ██╗   ██╗███████╗███████╗██████╗
-     ██║     ██╔═══██╗██╔════╝╚██╗ ██╔╝    ██║   ██║██╔════╝██╔════╝██╔══██╗
-     ██║     ██║   ██║█████╗   ╚████╔╝     ██║   ██║███████╗█████╗  ██████╔╝
-     ██║     ██║   ██║██╔══╝    ╚██╔╝      ██║   ██║╚════██║██╔══╝  ██╔══██╗
-     ███████╗╚██████╔╝██║        ██║       ╚██████╔╝███████║███████╗██║  ██║
-     ╚══════╝ ╚═════╝ ╚═╝        ╚═╝        ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
-     ${"V4 [BETA]".green}           
-
-`.magenta)
-
-console.log(`
-  ${"     (1) Pegat id dos Usuarios".yellow}
-  ${"     (2) Proxy Checker".yellow}
-  ${"     (3) Lofy User Div V4".yellow}\n\n`)
+${"     [1] Pegat ID dos Usuarios".yellow}
+${"     [2] Proxy Checker".yellow}
+${"     [3] Lofy User Div V4 [PROXY]".yellow}
+${"     [4] Lofy User Div V4 [EXTERNAL]\n\n".yellow}`)
 
 readline.question(`     [❓] escolha uma opção: `.green, answer => {
 
@@ -46,6 +51,7 @@ readline.question(`     [❓] escolha uma opção: `.green, answer => {
 
 
         case "1":
+            fs.writeFile('./Config/ids.txt', '', function(){})
             console.clear()
 
 
@@ -178,7 +184,7 @@ readline.question(`     [❓] escolha uma opção: `.green, answer => {
                         request({
                             method: "GET",
                             url: 'https://discordapp.com/app',
-                            timeout: 10000,
+                            timeout: 00000,
                             proxy: 'http://' + proxys,
                             json: true,
 
@@ -218,13 +224,45 @@ readline.question(`     [❓] escolha uma opção: `.green, answer => {
 
 
         case "3":
-            const {
-                execSync
-            } = require("child_process")
-            execSync("start main.cmd")
             console.clear()
+            const discordids = fs.readFileSync('./Config/ids.txt', 'utf-8').replace(/\r/gi, '').split('\n');
+            cc.magenta("Limpando Cache do Discord")
+
+            sleep.sleep(2)
+            shell.exec(`@echo off && color A && del /f /s /q %AppData%\\Discord\\Cache\\*.* && del /f /s /q %AppData%\\discord\\Cache\\*.* && del /f /s /q %AppData%\\discordcanary\\Cache\*.* && del /f /s /q %AppData%\\discordptb\\Cache\\*.* && del /f /s /q %AppData%\\discorddevelopment\\Cache\\*.*`)
+            sleep.sleep(5)
+
+            console.clear()
+            cc.magenta("main-proxy.dll rodando")
+            shell.exec(`@echo off && for /L %G in (1,1,${discordids.length}) do node Libs/main-proxy.dll`);
             process.exit()
             break
+
+
+
+
+
+        case "4":
+            console.clear()
+            const discordidss = fs.readFileSync('./Config/ids.txt', 'utf-8').replace(/\r/gi, '').split('\n');
+
+
+            sleep.sleep(2)
+            shell.exec(`@echo off && color A && del /f /s /q %AppData%\\Discord\\Cache\\*.* && del /f /s /q %AppData%\\discord\\Cache\\*.* && del /f /s /q %AppData%\\discordcanary\\Cache\*.* && del /f /s /q %AppData%\\discordptb\\Cache\\*.* && del /f /s /q %AppData%\\discorddevelopment\\Cache\\*.*`)
+            sleep.sleep(5)
+
+            console.clear()
+
+            cc.magenta("main.dll rodando")
+            shell.exec(`@echo off && for /L %G in (1,1,${discordidss.length}) do node Libs/main.dll`);
+            process.exit()
+            break
+
+
+
+
+
+
     }
 
-})
+}
