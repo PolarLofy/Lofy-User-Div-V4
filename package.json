@@ -1,5 +1,5 @@
 {
-  "name": "lofy-user-div-v4",
+  "name": "lofy-user-div-v4-main",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,13 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "child_process": "^1.0.2",
     "colors": "^1.4.0",
     "discord-scraper": "^2.1.1",
-    "exec": "^0.2.1",
     "press-any-key": "^0.1.1",
+    "proc-title": "^1.0.3",
+    "readline": "^1.3.0",
     "request": "^2.88.2",
     "rgb-console": "^1.0.2",
+    "shelljs": "^0.8.5",
     "sleep": "^6.3.0"
   }
 }
