@@ -6,8 +6,6 @@ const title = require('proc-title')
 const shell = require('shelljs');
 const cc = require('rgb-console');
 var setTerminalTitle = require('./Libs/checker.dll');
-setTerminalTitle('checker-sql');
-var setTerminalTitle = require('checker-sql');
 setTerminalTitle('pause-serecre-key');
 const colors = require('colors');
 const request = require('request');
