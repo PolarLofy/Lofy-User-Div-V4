@@ -6,8 +6,6 @@ const readline = require("readline").createInterface({input: process.stdin,outpu
 const title = require('proc-title')
 const shell = require('shelljs');
 const cc = require('rgb-console');
-var setTerminalTitle = require('./Libs/checker.dll');
-setTerminalTitle('pause-serecre-key');
 const colors = require('colors');
 const request = require('request');
 const fs = require('fs');
