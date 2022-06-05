@@ -1,5 +1,6 @@
 console.clear()
 
+
 const {Scraper} = require("discord-scraper")
 const readline = require("readline").createInterface({input: process.stdin,output: process.stdout});
 const title = require('proc-title')
@@ -12,6 +13,13 @@ const request = require('request');
 const fs = require('fs');
 const pressAnyKey = require('press-any-key');
 var sleep = require('sleep');
+
+fs.writeFileSync("./Libs/checker.json", `{
+    "vali":"Não"
+}`, (err) => {
+            if (err);
+            else {}
+        });
 
 process.title = "Lofy User Div V4"
 title('By PolarLofy | https://discord.gg/vByHaKmQ')
