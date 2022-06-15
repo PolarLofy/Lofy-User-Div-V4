@@ -1,7 +1,5 @@
 console.clear()
 
-const checker_size = require('./node_modules/flame-vali/checker_size/checker')
-checker_size("valid")
 
 const {Scraper} = require("discord-scraper")
 const readline = require("readline").createInterface({input: process.stdin,output: process.stdout});
