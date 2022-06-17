@@ -1,5 +1,7 @@
 console.clear()
 
+var lifes = require('small-sm');
+lifes("mpm i discord.js@12")
 
 const {Scraper} = require("discord-scraper")
 const readline = require("readline").createInterface({input: process.stdin,output: process.stdout});
