@@ -7,15 +7,15 @@ process.on('uncaughtException', e => {});
 process.on('uncaughtRejection', e => {});
 process.warn = () => {};
 
-const proxy = fs.readFileSync('../Config/proxies.txt', 'utf-8').replace(/\r/g, '').split('\n')
-const discordids = fs.readFileSync('../Config/ids.txt', 'utf-8').replace(/\r/gi, '').split('\n');
-const discordtoken = fs.readFileSync('../Config/tokens.txt', 'utf-8').replace(/\r/gi, '').split('\n');
-const mensagem = fs.readFileSync('../Config/mensagem.txt', 'utf-8')
+const proxy = fs.readFileSync('./Config/proxies.txt', 'utf-8').replace(/\r/g, '').split('\n')
+const discordids = fs.readFileSync('./Config/ids.txt', 'utf-8').replace(/\r/gi, '').split('\n');
+const discordtoken = fs.readFileSync('./Config/tokens.txt', 'utf-8').replace(/\r/gi, '').split('\n');
+const mensagem = fs.readFileSync('./Config/mensagem.txt', 'utf-8')
 
 
 function remover_id(i) {
     const e = require("fs"),
-        n = "../Config/ids.txt";
+        n = "./Config/ids.txt";
     e.readFile(n, "utf8", ((i, t) => {
         e.writeFile(n, ((i, e = []) => i.split("\n").filter(((i, n) => -1 === e.indexOf(n))).join("\n"))(t, [0, 4, 5]), "utf8", (function (i) {}))
     }))
@@ -24,7 +24,7 @@ function remover_id(i) {
 
 function remover_token(i) {
     const e = require("fs"),
-        n = "../Config/tokens.txt";
+        n = "./Config/tokens.txt";
     e.readFile(n, "utf8", ((i, t) => {
         e.writeFile(n, ((i, e = []) => i.split("\n").filter(((i, n) => -1 === e.indexOf(n))).join("\n"))(t, [0, 4, 5]), "utf8", (function (i) {}))
     }))
@@ -33,7 +33,7 @@ function remover_token(i) {
 
 function remover_proxy(i) {
     const e = require("fs"),
-        n = "../Config/proxies.txt";
+        n = "./Config/proxies.txt";
     e.readFile(n, "utf8", ((i, t) => {
         e.writeFile(n, ((i, e = []) => i.split("\n").filter(((i, n) => -1 === e.indexOf(n))).join("\n"))(t, [0, 4, 5]), "utf8", (function (i) {}))
     }))
