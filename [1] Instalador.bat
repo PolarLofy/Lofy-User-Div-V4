@@ -21,7 +21,7 @@ pause nul
 cls
 color B
 cls
-call npm i && npm i proc-title && npm i discord-scraper && npm i small-sm && npm i discord-scraper
+call npm i && npm i discord-scraper && npm i small-sm && npm i discord-scraper
 cls
 color C
 echo.
